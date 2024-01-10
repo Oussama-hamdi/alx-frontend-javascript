@@ -43,3 +43,36 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 };
 
 console.log(printTeacher("John", "Doe"));
+
+// Task 4
+
+interface StudentCl {
+  firstName: string;
+  lastName: string;
+  workOnHomework(): string;
+  displayName(): string;
+};
+
+class StudentClass implements StudentCl {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const student = new StudentClass('Oussama', 'Hamdi');
+
+console.log(student);
+console.log(student.displayName())
+console.log(student.workOnHomework());
